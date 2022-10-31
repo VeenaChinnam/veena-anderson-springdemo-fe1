@@ -38,7 +38,6 @@ export class EmployeesComponent implements OnInit {
     //     - uiState.employess is not stable
     //
   }
-
   ngOnInit(): void {
   }
 

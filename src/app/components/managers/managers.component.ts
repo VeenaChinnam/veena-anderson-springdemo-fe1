@@ -15,7 +15,6 @@ export class ManagersComponent implements OnInit {
         this.managers = [...managers]
         console.log(this.managers);
     })
-
   }
 
   ngOnInit(): void {

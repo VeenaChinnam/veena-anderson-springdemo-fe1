@@ -16,6 +16,7 @@ export class HttpService {
     return this.http.get<IEmployee[]>('http://localhost:8080/api/employee')
   }
 
+
   //adding new employee
   addNewEmployee(newEmployee: IEmployee) : Observable<IEmployee> {
     console.log('calling post on backend', newEmployee)

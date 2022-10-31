@@ -3,3 +3,4 @@ export interface IEmployee {
     name: string,
     role: string
 }
+

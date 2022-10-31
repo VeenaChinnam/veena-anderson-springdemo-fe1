@@ -17,6 +17,7 @@ import { ManagersComponent } from './components/managers/managers.component';
   imports: [
     BrowserModule,
     HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
