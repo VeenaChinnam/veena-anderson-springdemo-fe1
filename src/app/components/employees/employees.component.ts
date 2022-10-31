@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component,  OnInit} from '@angular/core';
 import { UiStateService } from 'src/app/services/ui-state.service';
-import { Employee } from 'src/Employee';
+import { IEmployee } from 'src/app/Interfaces/IEmployee';
 
 @Component({
   selector: 'app-employees',
@@ -8,11 +8,17 @@ import { Employee } from 'src/Employee';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
-  employees: Employee[] = []
+   employees: IEmployee[] = []
+  employee: IEmployee =
+    {
+      name : "newguy",
+      role : "workhard"
+    }
+
 
   constructor(private uiState: UiStateService) {
     // Arrays passsed by reference
-    // passed by reference - 
+    // passed by reference -
     //    when one variable is assigned to another variable
     //    const var1 = {f1: "v1"}
     //    const var2 = var1
@@ -30,10 +36,16 @@ export class EmployeesComponent implements OnInit {
     )
     // Why make a copy of uiState.employees
     //     - uiState.employess is not stable
-    //     
+    //
   }
 
   ngOnInit(): void {
+  }
+
+  onAddNew(){
+    console.log('calling add newemployee')
+    this.uiState.createEmployee(this.employee);
+
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UiStateService } from 'src/app/services/ui-state.service';
-import { Employee } from 'src/Employee';
+import { IEmployee } from 'src/app/Interfaces/IEmployee';
 
 @Component({
   selector: 'app-employee',
@@ -8,10 +8,10 @@ import { Employee } from 'src/Employee';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-  @Input() employee: Employee | undefined
+  @Input() employee: IEmployee | undefined
   // What does the ! do?
-  // It is not the same as Employee | undefined
-  // It is not the same as Employee | null
+  // It is not the same as IEmployee | undefined
+  // It is not the same as IEmployee | null
   // Typescript wants to check that your code is type correct
   // ! disables that check entirely for this field
 
@@ -23,5 +23,9 @@ export class EmployeeComponent implements OnInit {
   onDelete() : void {
     this.uiState.deleteEmployeeById(this.employee?.id)
   }
+
+
+
+
 
 }
